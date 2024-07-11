@@ -98,29 +98,15 @@ export function DeparturesSearchResults({
                 className="flex p-4 gap-8 bg-white shadow rounded h-20"
               >
                 <div className="flex flex-col">
-                  {flight.expectedTime !== flight.originalTime ? (
-                    <time
-                      dateTime={flight.expectedTime}
-                      className="font-semibold"
-                    >
-                      {flight.expectedTime}
-                    </time>
-                  ) : (
-                    <>
-                      <time
-                        dateTime={flight.originalTime}
-                        className="line-through"
-                      >
-                        {flight.originalTime}
-                      </time>
-                      <time
-                        dateTime={flight.expectedTime}
-                        className="text-dark-red font-semibold"
-                      >
-                        {flight.expectedTime}
-                      </time>
-                    </>
-                  )}
+                  <time dateTime={flight.originalTime} className="line-through">
+                    {flight.originalTime}
+                  </time>
+                  <time
+                    dateTime={flight.expectedTime}
+                    className="text-dark-red font-semibold"
+                  >
+                    {flight.expectedTime}
+                  </time>
                 </div>
                 <div>
                   <div>{flight.airport}</div>
