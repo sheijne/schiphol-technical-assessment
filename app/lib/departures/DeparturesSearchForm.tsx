@@ -88,7 +88,7 @@ export function DeparturesSearchForm({
         What is your flight destination?
       </label>
 
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4 min-w-0 max-w-full">
         <div className="relative mt-4 w-96 max-w-full">
           <input
             id={searchInputId}
@@ -126,7 +126,7 @@ export function DeparturesSearchForm({
           </button>
 
           {showSuggestions ? (
-            <div className="absolute left-0 bottom-0 py-2 translate-y-full w-full bg-white/75 backdrop-blur-lg border-grey-storm rounded-b">
+            <div className="absolute left-0 bottom-0 z-[1] py-2 translate-y-full w-full bg-white/75 backdrop-blur-lg border-grey-storm rounded-b">
               {destinations.state === "loading" ? (
                 <div className="py-2 px-4">Loading destinations...</div>
               ) : (
@@ -160,7 +160,7 @@ export function DeparturesSearchForm({
           ) : null}
         </div>
 
-        <div className="relative mt-4">
+        <div className="relative sm:mt-4">
           <select
             name="search.order"
             value={input.order}
