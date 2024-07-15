@@ -55,7 +55,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
           }
 
           return bDate.getTime() - aDate.getTime();
-        }),
+        }).slice(0, 5),
     );
   } catch (e) {
     console.error(e);
